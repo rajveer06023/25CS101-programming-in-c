@@ -1,0 +1,36 @@
+//inseertion of elements in array
+#include<stdio.h>
+int main(){
+    int size,position,i,new_element;
+    printf("enter the size of an array : ");
+    scanf("%d", &size);
+    int arr[size];
+    printf("enter an elements of array :\n");
+    for(i = 0;i < size; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    printf("enter the position where element is insert :");
+    scanf("%d", &position);
+
+    printf("enter the element which are to be insert :");
+    scanf("%d", &new_element);
+
+    if(position > size)
+    printf("insertion will not happen !");
+
+    else
+    {
+        for(i = size - 1;i >= position; i--)
+        arr[i] = arr[i-1];
+    }
+    arr[position - 1] = new_element;
+    printf("the updated array is :\n");
+    for(i = 0; i < size ;i++)
+    printf("%d ", arr[i]);
+    printf("\n");
+
+
+
+    return 0;
+}
