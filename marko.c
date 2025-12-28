@@ -1,124 +1,59 @@
-//   1  function with no argument and no return value:
-//to find the largest of three given number:
-// #include<stdio.h>
+#include <stdio.h>
+#include <math.h>
 
-// void largest();
+int main() {
+    int choice, subchoice;
+    float r, l, b, base, height;
+    float a, c, d, s, area;
 
+    printf("MENU\n");
+    printf("1. Area of Circle\n");
+    printf("2. Area of Rectangle\n");
+    printf("3. Area of Triangle\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
 
-// int main(void){
+    switch (choice) {
+        case 1:
+            printf("Enter radius: ");
+            scanf("%f", &r);
+            area = 3.14 * r * r;
+            printf("Area of Circle = %.2f\n", area);
+            break;
 
-//     largest();
+        case 2:
+            printf("Enter length and breadth: ");
+            scanf("%f %f", &l, &b);
+            area = l * b;
+            printf("Area of Rectangle = %.2f\n", area);
+            break;
 
-//     return 0;
-// }
+        case 3:
+            printf("Triangle Options\n");
+            printf("1. Using base and height\n");
+            printf("2. Using three sides\n");
+            printf("Enter sub choice: ");
+            scanf("%d", &subchoice);
 
-// void largest(){
-//     int a, b, c, i;
-//     printf("enter three number :");
-//     scanf("%d%d%d", &a,&b,&c);
+            if (subchoice == 1) {
+                printf("Enter base and height: ");
+                scanf("%f %f", &base, &height);
+                area = 0.5 * base * height;
+                printf("Area of Triangle = %.2f\n", area);
+            } else if (subchoice == 2) {
+                printf("Enter three sides: ");
+                scanf("%f %f %f", &a, &c, &d);
+                s = (a + c + d) / 2;
+                area = sqrt(s * (s - a) * (s - c) * (s - d));
+                printf("Area of Triangle = %.2f\n", area);
+            } else {
+                printf("Invalid sub choice\n");
+            }
+            break;
 
-//     i = a;
-//     if (b > i)
-//     i = b;
-//     if (c > i)
-//     i =   c;
-//     printf("largest = %d\n", i);
-
-// }
-
-//  2  function with argument and no return value:
-
-// #include<stdio.h>
-
-// void largest (int a,int b,int c);
-
-// int main(){
-
-//     int x,y,z;
-
-//     printf("enter the three number :");
-//     scanf("%d%d%d", &x,&y,&z);
-//     largest(x, y, z);
-
-
-
-//     return 0;
-// }
-
-// void largest(int a, int b, int c)
-// {
-
-//     int i;
-//     i = a;
-//     if(b > i )
-//     i = b;
-//     if (c > i)
-//     i = c;
-//     printf("largest = %d\n",i );
-
-
-// }
-
-//    3   function with no argunment and but with return value;
-
-#include<stdio.h>
-int largest(void);
-
-int main(){
-
-    int larg;
-
-    larg = largest();
-    printf("largest number is = %d", larg);
+        default:
+            printf("Invalid choice\n");
+    }
 
     return 0;
 }
-
-int largest(void)
-{
-    int a, b, c, i;
-    printf("enter the three number :");
-    scanf("%d%d%d", &a, &b, &c);
-
-    i = a; 
-    if(b > i)
-    i = b;
-    if(c > i)
-    i = c;
-
-    return i;
-
-}
-
-//  4  function with argunment and return value;
-
-// #include<stdio.h>
-// int largest(int a, int b, int c);
-
-// int main(){
-
-//     int a, b, c,large;
-
-//     printf("enter the three number :");
-//     scanf("%d%d%d", &a, &b, &c);
-
-//     large = largest( a , b , c);
-
-//     printf("largest number is = %d", large);
-
-
-
-
-//     return 0;
-// }
-// int largest(int a, int b, int c)
-// {
-//     int i;
-//     i = a;
-//     if(b > i)
-//     i = b;
-//     if(c > i )
-//     i = c;
-
-//     return i;
-// }
